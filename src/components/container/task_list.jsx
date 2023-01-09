@@ -3,24 +3,32 @@ import { LEVELS } from '../../models/levels.enum';
 import { Task } from '../../models/task.class';
 import TaskComponent from '../pure/task';
 
+import '../../styles/task.scss';
+
 
 const TaskListComponent = () => {
 
     const defaultTask = new Task('Mi primera Tarea', 'Default description.', false, LEVELS.normal);
 
-
     //Estado del componente
+
     const [tasks, settasks] = useState([defaultTask]);
+
+    const [loading, setLoading] = useState(true);
+
 
     //Control del ciclo de vida del componente
 
     useEffect(() => {
-        console.log('Task State has been modified')
+        console.log('Task State has been modified');
+
+        setLoading(false);
+
         return () => {
             console.log('TaskList component is going to unmount');
         };
     }, [tasks]);
-    
+
 
     const changeCompleted = (id) => {
         console.log('TODO: Cambiar el estado de una tarea');
