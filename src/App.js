@@ -10,17 +10,18 @@ import MiComponenteConContexto from './hooks/ejemplo3';
 import Ejemplo4 from './hooks/ejemplo4';
 import GreeingStyled from './components/pure/greeingStyled';
 import ClockComponent from './hooks/lifecycle/clockComponent';
+import Father from './components/container/father';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      {/* <header className="App-header"> */}
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
         {/* {Componente Propio} */}
         {/* <Greeting name="Leonel"></Greeting> */}
         {/* <GreetingF name={"Leonel"}></GreetingF> */}
         {/* Componente de Listado de Tareas */}
-        {/* <TaskListComponent></TaskListComponent>  */}
+       
         {/* Tarea de ejercicio 1, 2,3 */}
         {/* <ContactListComponent></ContactListComponent> */}
         {/* Ejemplo de uso de hooks */}
@@ -34,8 +35,11 @@ function App() {
           </h3>
         </Ejemplo4> */}
         {/* <GreeingStyled name='Leonel'></GreeingStyled> */}
-        <ClockComponent></ClockComponent>
-      </header>
+        {/* <ClockComponent></ClockComponent> */}
+      {/* </header> */}
+      {/* <Father></Father> */}
+      <TaskListComponent></TaskListComponent>
+
     </div>
   );
 }

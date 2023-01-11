@@ -1,4 +1,21 @@
-.task-name{
-    font-weight: bold;
-    color: cadetblue;
+
+.col-12{
+    .cuerpo-1{
+            position: relative;
+            height: 400px;
+            background-color: white;
+            i{
+                cursor: pointer;
+            }
+    }
+    
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: aliceblue;
 }
