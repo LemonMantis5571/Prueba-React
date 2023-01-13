@@ -23,7 +23,7 @@ function App() {
         {/* Componente de Listado de Tareas */}
        
         {/* Tarea de ejercicio 1, 2,3 */}
-        {/* <ContactListComponent></ContactListComponent> */}
+        <ContactListComponent></ContactListComponent> 
         {/* Ejemplo de uso de hooks */}
         {/* <Ejemplo1></Ejemplo1> */}
         {/* <Ejemplol2></Ejemplol2> */}
@@ -38,7 +38,7 @@ function App() {
         {/* <ClockComponent></ClockComponent> */}
       {/* </header> */}
       {/* <Father></Father> */}
-      <TaskListComponent></TaskListComponent>
+      {/* <TaskListComponent></TaskListComponent> */}
 
     </div>
   );
