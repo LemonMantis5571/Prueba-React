@@ -11,6 +11,8 @@ import Ejemplo4 from './hooks/ejemplo4';
 import GreeingStyled from './components/pure/greeingStyled';
 import ClockComponent from './hooks/lifecycle/clockComponent';
 import Father from './components/container/father';
+import OptionalRender from './components/pure/optionalRender';
+import CuadradoComponent from './components/pure/cuadradoComponent';
 
 function App() {
   return (
@@ -23,7 +25,7 @@ function App() {
         {/* Componente de Listado de Tareas */}
        
         {/* Tarea de ejercicio 1, 2,3 */}
-        <ContactListComponent></ContactListComponent> 
+        {/* <ContactListComponent></ContactListComponent>  */}
         {/* Ejemplo de uso de hooks */}
         {/* <Ejemplo1></Ejemplo1> */}
         {/* <Ejemplol2></Ejemplol2> */}
@@ -38,6 +40,10 @@ function App() {
         {/* <ClockComponent></ClockComponent> */}
       {/* </header> */}
       {/* <Father></Father> */}
+      {/* Ejemplos de renderizado condicional */}
+      {/* <OptionalRender></OptionalRender> */}
+      {/* Tarea 10,11 y 12 */}
+      <CuadradoComponent></CuadradoComponent>
       {/* <TaskListComponent></TaskListComponent> */}
 
     </div>

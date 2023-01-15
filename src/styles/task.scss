@@ -19,3 +19,15 @@ body {
     padding-bottom: 40px;
     background-color: aliceblue;
 }
+div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    .cuadrado {
+        height: 255px;
+        width: 255px;
+        background-color: black;
+    }
+}

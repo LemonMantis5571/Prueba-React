@@ -17,7 +17,7 @@ const Father = () => {
 
     return (
         <div>
-            <Child name={name} send={showMessage} update= {updateName}></Child>
+            <Child name={name} send={showMessage} update = {updateName}></Child>
         </div>
     );
 }
