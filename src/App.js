@@ -13,6 +13,7 @@ import ClockComponent from './hooks/lifecycle/clockComponent';
 import Father from './components/container/father';
 import OptionalRender from './components/pure/optionalRender';
 import CuadradoComponent from './components/pure/cuadradoComponent';
+import LoginFormik from './components/pure/forms/loginFormik';
 
 function App() {
   return (
@@ -44,7 +45,9 @@ function App() {
       {/* <OptionalRender></OptionalRender> */}
       {/* Tarea 10,11 y 12 */}
       {/* <CuadradoComponent></CuadradoComponent> */}
-      <TaskListComponent></TaskListComponent> 
+      {/* <TaskListComponent></TaskListComponent>  */}
+      {/* Ejemplos Formik */}
+      <LoginFormik></LoginFormik>
 
     </div>
   );
