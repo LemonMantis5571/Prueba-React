@@ -45,8 +45,19 @@ const TaskComponent = ({ task, complete, remove }) => {
         return <i onClick={() => complete(task)} className='bi bi-x-square' style={{color: 'grey'}}></i>;
     }
 
+    const completedStyle = {
+        color: 'gray',
+        textDecoration: 'line-through'
+    }
+
+    const pendingStyle = {
+        fontWeight: 'bold',
+        color: 'red'
+    }
+
     return (
-        <tr className='fw-normal'>
+        
+        <tr className='fw-normal' style={task.completed ? completedStyle : pendingStyle}>
             <th>
                 <span className='ms-2'>{task.name}</span>
             </th>

@@ -43,8 +43,8 @@ function App() {
       {/* Ejemplos de renderizado condicional */}
       {/* <OptionalRender></OptionalRender> */}
       {/* Tarea 10,11 y 12 */}
-      <CuadradoComponent></CuadradoComponent>
-      {/* <TaskListComponent></TaskListComponent> */}
+      {/* <CuadradoComponent></CuadradoComponent> */}
+      <TaskListComponent></TaskListComponent> 
 
     </div>
   );

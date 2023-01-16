@@ -24,7 +24,9 @@ const TaskListComponent = () => {
 
     useEffect(() => {
         
-        setLoading(false);
+        setTimeout(() => {
+            setLoading(false);
+        }, 2000);
 
         return () => {
             
@@ -58,6 +60,60 @@ const TaskListComponent = () => {
 
     }
 
+    const Table = () => {
+
+        return (
+            <table>
+                <thead>
+                <tr>
+                    <th scope='col'>Title</th>
+                    <th scope='col'>Description</th>
+                    <th scope='col'>Priority</th>
+                    <th scope='col'>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {/* TODO: Iterar sobre una lista de tareas */}
+
+                {tasks.map((task, index) => {
+                        return (
+                        <TaskComponent key={index} 
+                        task={task} 
+                        complete={completeTask} 
+                        remove={deleteTask}></TaskComponent>
+                        );
+                    }
+                )}
+            
+                </tbody>
+            </table>
+
+        )
+    }
+
+    const Spinner = () => {
+        return (
+            <div className='spinner-border mt-5' role="status">
+                <span className='visually-hidden'>Loading...</span>
+            </div>
+        )
+    }
+
+    let tasksTable;
+    let spinnerLoader = <Spinner></Spinner>
+
+    if (tasks.length > 0) {
+        tasksTable = <Table></Table>
+    }
+    else {
+        tasksTable = (
+            <div>
+                <h4>Theres no tasks yet</h4>
+                <h5>Please Create one</h5>
+            </div>
+        )
+    }
+
     return (
         <div>
             <div className='col-12'>
@@ -68,33 +124,10 @@ const TaskListComponent = () => {
                         </h5>
                     </div>
                 </div>
-                <div className='card-body cuerpo-1' data-mdb-perfect-scrollbar="true">
-                    <table>
-                        <thead>
-                        <tr>
-                            <th scope='col'>Title</th>
-                            <th scope='col'>Description</th>
-                            <th scope='col'>Priority</th>
-                            <th scope='col'>Actions</th>
-                        </tr>
-                        </thead>
-                      <tbody>
-                        {/* TODO: Iterar sobre una lista de tareas */}
-
-                        {tasks.map((task, index) => {
-                                return (
-                                 <TaskComponent key={index} 
-                                 task={task} 
-                                 complete={completeTask} 
-                                 remove={deleteTask}></TaskComponent>
-                                );
-                            }
-                        )}
-                       
-                      </tbody>
-                    </table>
+                <div className='card-body cuerpo-1 text-center' data-mdb-perfect-scrollbar="true">
+                    {loading ? spinnerLoader : tasksTable}
                 </div>
-                <TaskForm add={addTask}></TaskForm>
+                <TaskForm add={addTask} length={tasks.length}></TaskForm>
             </div>
            
         </div>

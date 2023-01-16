@@ -5,7 +5,7 @@ import { LEVELS } from '../../../models/levels.enum';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
-const TaskForm = ({add}) => {
+const TaskForm = ({add, length}) => {
 
     const nameRef = useRef('');
     const descriptionRef = useRef('');
@@ -22,14 +22,15 @@ const TaskForm = ({add}) => {
         add(newTask);
     }
 
+
     return (
        <form onSubmit={addTask} className='d-flex flex-column justify-content-center align-items-center mt-3 gap-2'>
             <div className='d-flex flex-column form-outline flex-fill gap-2'>
                 <input ref={nameRef} id='inputName' type={'text'} className='form-control form-control-lg' required autoFocus placeholder='Name'></input>
                 <input ref={descriptionRef} id='inputDescription' type={'text'} className='form-control form-control-lg' required placeholder='Description'></input>
-               <label htmlFor='selectLevel' className='sr-only'>Priority</label>
-               <select ref={levelRef} id='selectLevel' defaultValue={LEVELS.normal}>
-                    <option value={LEVELS.normal}>
+               <label htmlFor='selectLevel' className='sr-only'></label>
+               <select  ref={levelRef} id='selectLevel' className='form-select'>
+                    <option selected defaultValue={LEVELS.normal} value={LEVELS.normal}>
                         Normal
                     </option>
                     <option value={LEVELS.urgent}>
@@ -40,13 +41,14 @@ const TaskForm = ({add}) => {
                     </option>
                </select>
             </div>
-            <button type='submit' className='btn btn-primary btn-lg'>Add Task</button>
+            <button type='submit' className='btn btn-primary btn-lg'>{length > 0 ? 'Add Task' : 'Create your first task'}</button>
        </form>
     );
 }
 
 TaskForm.propTypes = {
-    add: PropTypes.func.isRequired
+    add: PropTypes.func.isRequired,
+    length: PropTypes.number.isRequired
 }
 
 
