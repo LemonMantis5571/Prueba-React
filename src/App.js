@@ -14,6 +14,7 @@ import Father from './components/container/father';
 import OptionalRender from './components/pure/optionalRender';
 import CuadradoComponent from './components/pure/cuadradoComponent';
 import LoginFormik from './components/pure/forms/loginFormik';
+import RegisterFormik from './components/pure/forms/registerFormik';
 
 function App() {
   return (
@@ -47,7 +48,8 @@ function App() {
       {/* <CuadradoComponent></CuadradoComponent> */}
       {/* <TaskListComponent></TaskListComponent>  */}
       {/* Ejemplos Formik */}
-      <LoginFormik></LoginFormik>
+      {/* <LoginFormik></LoginFormik> */}
+      <RegisterFormik></RegisterFormik>
 
     </div>
   );
