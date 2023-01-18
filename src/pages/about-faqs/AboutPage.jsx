@@ -1,9 +1,12 @@
 import React from 'react';
 
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate} from 'react-router-dom';
 
+const AboutPage = () => {
 
-const HomePage = () => {
+    const location = useLocation();
+
+    console.log(location.pathname);
 
     const history = useNavigate();
 
@@ -11,27 +14,27 @@ const HomePage = () => {
         history(path)
     }
 
-    const goFoward = (e) => {
-        history(+1);
-        console.log(history(1));
+    const goBack = (e) => {
+        e.preventDefault();
+        history(-1);
     }
 
-
-
+    const goFoward = (e) => {
+        history(+1);
+    }
 
     return (
         <div>
-            <h1 style={{color: 'red'}}>Home Page</h1>
-            <h1>Dashboard</h1>
-            <div>
-
+            <h1>
+                About | FAQs Page
+            </h1>
             <div>
                 <button onClick={() => navigate('/')}>Go Home</button>
+                <button onClick={goBack}>Go Back</button>
                 <button onClick={goFoward}>Go Next</button>
             </div>
-        </div>
         </div>
     );
 }
 
-export default HomePage;
+export default AboutPage;

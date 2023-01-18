@@ -8,8 +8,6 @@ import { ROLES } from '../../../models/roles.enum';
 
 const RegisterFormik = () => {
 
-    let user = new User();
-
     const initialValues = {
         username: '',
         email: '',
@@ -45,10 +43,6 @@ const RegisterFormik = () => {
         }
     );
 
-
-    const submit = (values) => {
-        alert('Register user');
-    }
 
     return (
         <div>
