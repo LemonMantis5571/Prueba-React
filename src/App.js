@@ -15,6 +15,7 @@ import OptionalRender from './components/pure/optionalRender';
 import CuadradoComponent from './components/pure/cuadradoComponent';
 import LoginFormik from './components/pure/forms/loginFormik';
 import RegisterFormik from './components/pure/forms/registerFormik';
+import TaskFormik from './components/pure/forms/taskFormik';
 
 function App() {
   return (
@@ -49,7 +50,10 @@ function App() {
       {/* <TaskListComponent></TaskListComponent>  */}
       {/* Ejemplos Formik */}
       {/* <LoginFormik></LoginFormik> */}
-      <RegisterFormik></RegisterFormik>
+      {/* <RegisterFormik></RegisterFormik> */}
+      {/* Tarea 13,14,15 */}
+      <TaskFormik></TaskFormik>
+
 
     </div>
   );
