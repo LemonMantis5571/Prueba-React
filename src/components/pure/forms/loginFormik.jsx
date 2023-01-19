@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
@@ -21,6 +22,10 @@ const LoginFormik = () => {
         password: ''
     }
 
+    const Navigate = useNavigate();
+
+
+
     return (
         <div>
             <h4>Login Formik</h4>
@@ -31,7 +36,8 @@ const LoginFormik = () => {
                 await new Promise((r) => setTimeout(r, 500));
                 alert(JSON.stringify(values, null, 2));
                 // Guardar datos
-                localStorage.setItem('credentials', values)
+                await localStorage.setItem('credentials', values)
+                Navigate("/profile");
             }}>
                 {/* We obtain props from formik */}
                 {({ values, 
@@ -41,7 +47,7 @@ const LoginFormik = () => {
                     handleChange, 
                     handleBlur}) => 
                     ( 
-                        <Form>
+                        <Form className='d-flex flex-column gap-3'>
                             <label htmlFor="email">Email</label>
                             <Field id="email" name="email"  type="email" placeholder="example@email.com" />
                                 {/* Mensaje de error en email */}
