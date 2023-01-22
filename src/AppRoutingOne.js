@@ -8,6 +8,7 @@ import TaskPage from "./pages/tasks/TaskPage";
 import TaskDetailPage from "./pages/tasks/TaskDetailPage";
 import LoginPage from "./pages/auth/LoginPage";
 import PropsPage from "./pages/home/PropsPage";
+import TaskListComponent from "./components/container/task_list";
 
 function AppRoutingOne() {
 
@@ -61,7 +62,7 @@ function AppRoutingOne() {
               element={logged ? <ProfilePage/> : <Navigate to={"/login"}></Navigate> }>
               </Route>
 
-              <Route path='/tasks' element={<TaskPage />} />
+              <Route path='/tasks' element={<TaskListComponent></TaskListComponent>} />
               <Route path="/tasks/:id" element={<TaskDetailPage task={taskList}/>}> </Route>
               <Route path="/404" element={<NotFoundPage></NotFoundPage>}></Route>
               <Route path='*' element={<NotFoundPage></NotFoundPage>}> </Route>

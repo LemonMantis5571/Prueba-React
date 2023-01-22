@@ -15,7 +15,7 @@ function AppRoutingFinal() {
       <Router>
         <Routes>
           <Route exact path = '/' 
-          element={loggedIn ? <Navigate to={'/dashboard'}/> : <Navigate to={'login'}/>} />
+          element={loggedIn ? <Navigate to={'/dashboard'}/> : <Navigate to={'/login'}/>} />
 
           <Route exact path="/login" element={<LoginPage/>}/>
 

@@ -37,7 +37,7 @@ const LoginFormik = () => {
                 alert(JSON.stringify(values, null, 2));
                 // Guardar datos
                 await localStorage.setItem('credentials', values)
-                Navigate("/profile");
+                Navigate('/');
             }}>
                 {/* We obtain props from formik */}
                 {({ values, 
