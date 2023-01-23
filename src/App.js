@@ -16,6 +16,8 @@ import CuadradoComponent from './components/pure/cuadradoComponent';
 import LoginFormik from './components/pure/forms/loginFormik';
 import RegisterFormik from './components/pure/forms/registerFormik';
 import TaskFormik from './components/pure/forms/taskFormik';
+import AsyncExample from './components/pure/AsyncExample';
+import ObservableExample from './components/pure/ObservableExample';
 
 function App() {
   return (
@@ -52,7 +54,11 @@ function App() {
       {/* <LoginFormik></LoginFormik> */}
       {/* <RegisterFormik></RegisterFormik> */}
       {/* Tarea 13,14,15 */}
-      <TaskFormik></TaskFormik>
+      {/* <TaskFormik></TaskFormik> */}
+      {/* Ejemplo de procesos asincronos */}
+      {/* <AsyncExample></AsyncExample> */}
+      {/* Ejemplo de observables */}
+      <ObservableExample></ObservableExample>
 
 
     </div>
