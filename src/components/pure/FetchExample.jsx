@@ -1,5 +1,5 @@
 import React, {useState, useEffect}from 'react';
-import { getAllPagedUsers, getAllUsers, getUserDetails } from '../../fetchService';
+import { getAllPagedUsers, getAllUsers, getUserDetails, login } from '../../fetchService';
 
 const FetchExample = () => {
 
@@ -52,7 +52,22 @@ const FetchExample = () => {
             alert(`Error while retreiving users ${error}`)
 
         }).finally(() => {
-            console.table(users);
+            console.table(selectedUser);
+            
+        })
+    }
+
+    const authUser = () => {
+        login('eve.holt@reqres.in', 'cityslicka').then((response) => {
+            console.log(response.token);
+            console.log(response.status);
+            sessionStorage.setItem('token', response.token)
+
+        }).catch((error) => {
+            console.log(error);
+
+        }).finally(() => {
+            console.log('Enden Login user. Navigate to home');
             
         })
     }
@@ -62,8 +77,11 @@ const FetchExample = () => {
         obtainUsers();
     }, []);
 
+    console.log(selectedUser);
+
     return (
         <div>
+            <button onClick={authUser}>Login</button>
             <h2>Users:</h2>
             {users.map((user, index) =>
 
@@ -77,13 +95,15 @@ const FetchExample = () => {
                 <h3>
                     User Details
                 </h3>
-                {selectedUser && (
+                
+                {Object.keys(selectedUser).length !== 0 ? (
+                    
                     <div>
                     <p>Name: {selectedUser.first_name}</p>
                     <p>Last Name: {selectedUser.last_name}</p>
                     <p>Email: {selectedUser.email}</p>
                     <img src={selectedUser.avatar} alt='avatar' />
-                    </div>)}
+                    </div>) : <h6>Please click on a user to see its Details</h6> }
             </div>
 
         </div>
